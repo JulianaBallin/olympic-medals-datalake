@@ -210,3 +210,5 @@ __marimo__/
 # Datasets brutos (raw)
 raw/*.csv
 !raw/.gitkeep      
+# Dados intermediários e finais (bronze, gold)
+bronze/*.csv

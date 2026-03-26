@@ -168,5 +168,3 @@ Cada dataset possui um arquivo JSON com a seguinte estrutura (definida em `metad
 Este projeto está sob a licença MIT – consulte o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
-
-**🏅 Boas análises!**
