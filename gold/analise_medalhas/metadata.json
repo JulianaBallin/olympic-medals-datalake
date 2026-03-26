@@ -1,0 +1,16 @@
+{
+  "nome_analise": "Quadro de Medalhas por País (Histórico + Paris 2024)",
+  "descricao": "Ranking de países com ouro, prata, bronze e total, separado por verão, inverno e total geral, baseado nos dados unificados. Inclui tradução dos nomes dos países para português e gráficos adicionais (evolução, distribuição, gênero).",
+  "arquivos_gerados": [
+    "medalhas_verao.csv",
+    "medalhas_inverno.csv",
+    "medalhas_total.csv",
+    "medalhas_plot.png",
+    "evolucao_medalhas.png",
+    "distribuicao_medalhas.png",
+    "medalhas_por_genero.png"
+  ],
+  "notebook_associado": "notebooks/03_quadro_medalhas_gold.ipynb",
+  "data_geracao": "2026-03-26",
+  "observacoes": "Utiliza o dataset 'medalhas_unificado' da camada bronze. Gráficos mostram os 50 países mais medalhados com espaçamento ajustado para legibilidade. A evolução considera a soma de todas as medalhas por ano, independentemente do país."
+}

@@ -1,0 +1,17 @@
+{
+  "nome_dataset": "Medalhas unificadas (histórico + Paris 2024)",
+  "fonte": "Integração entre Base dos Dados (histórico) e Kaggle (medallists.csv de Paris)",
+  "descricao": "Quadro de medalhas por país e edição, incluindo edições históricas (1896-2022) e Paris 2024. Formato agregado (ouro, prata, bronze, total).",
+  "campos_principais": [
+    "year",
+    "edition",
+    "country",
+    "gold",
+    "silver",
+    "bronze",
+    "total",
+    "season"
+  ],
+  "data_criacao": "2026-03-26",
+  "observacoes": "Os dados de Paris foram agregados a partir do medallists.csv. As colunas gold/silver/bronze representam a contagem de medalhas."
+}

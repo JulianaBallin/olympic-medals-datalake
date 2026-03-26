@@ -1,0 +1,18 @@
+{
+  "nome_dataset": "Histórico de Medalhas Olímpicas por País (1896-2022)",
+  "fonte": "Base dos Dados (basedosdados.org) – tabela medalhas",
+  "descricao": "Quadro de medalhas por país e edição olímpica, contendo ouro, prata, bronze e total.",
+  "campos_principais": [
+    "year",
+    "edition",
+    "edition_id",
+    "country",
+    "country_noc",
+    "gold",
+    "silver",
+    "bronze",
+    "total"
+  ],
+  "data_criacao": "2026-03-26",
+  "observacoes": "Inclui edições de verão e inverno. Cada linha representa um país em uma edição."
+}

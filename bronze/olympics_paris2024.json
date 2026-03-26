@@ -1,0 +1,30 @@
+{
+  "nome_dataset": "Medalhistas de Paris 2024",
+  "fonte": "Kaggle – Paris 2024 Olympic Summer Games (piterfm/paris-2024-olympic-summer-games) – medallists.csv",
+  "descricao": "Lista de todas as medalhas concedidas nos Jogos de Paris 2024, com detalhes do atleta, disciplina, país, gênero.",
+  "campos_principais": [
+    "medal_date",
+    "medal_type",
+    "medal_code",
+    "name",
+    "gender",
+    "country_code",
+    "country",
+    "country_long",
+    "nationality_code",
+    "nationality",
+    "nationality_long",
+    "team",
+    "team_gender",
+    "discipline",
+    "event",
+    "event_type",
+    "url_event",
+    "birth_date",
+    "code_athlete",
+    "code_team",
+    "is_medallist"
+  ],
+  "data_criacao": "2026-03-26",
+  "observacoes": "Cada linha representa uma medalha (ouro, prata, bronze) por atleta ou equipe."
+}

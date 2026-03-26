@@ -1,0 +1,12 @@
+{
+  "nome_dataset": "Medalhas por modalidade (Paris 2024)",
+  "fonte": "Derivado do medallists.csv de Paris",
+  "descricao": "Contagem de medalhas por disciplina e tipo de medalha (ouro, prata, bronze) nos Jogos de Paris 2024.",
+  "campos_principais": [
+    "discipline",
+    "medal_type",
+    "count"
+  ],
+  "data_criacao": "2026-03-26",
+  "observacoes": "Cada linha representa quantas medalhas de um tipo foram concedidas em uma disciplina."
+}

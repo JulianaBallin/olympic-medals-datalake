@@ -1,166 +1,172 @@
-# Olympic Medals Data Lake
 
-![Data Lake Architecture](https://via.placeholder.com/1200x400/1e3c72/ffffff?text=Olympic+Medals+Data+Lake)
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)](https://jupyter.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<h1 align="center">🏅 Olympic Medals Data Lake</h1>
 
-## 1️⃣ Overview
+<p align="center">
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnZyaGZxOGluZXlucTA0dGNlbWRrazE4ZGo2cGlteWJpYnI2eHFsYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LXoFuds81sEDJkUDkf/giphy.gif" width="200">
+</p>
 
-This project implements a **local Data Lake** for Olympic Games medal data, integrating historical results (1896–2022) with the Paris 2024 Summer Olympics. The lake follows a **medallion architecture** (`raw` → `bronze` → `gold`), ensuring data quality, traceability, and reusability. Each dataset is accompanied by **JSON metadata**, and all transformations are documented in **Jupyter notebooks**. Final outputs include consolidated medal rankings, modality analyses, and gender‑based insights.
+<p align="center">
+  Data Lake para análise de medalhas olímpicas (1896–2024) com arquitetura medalhão, metadados JSON e visualizações.
+</p>
 
-**Key features:**
-- Ingestion of two public datasets (CSV)
-- Conversion to **Parquet** for efficient storage
-- **Metadata** for every dataset (source, fields, description)
-- **Integration** of historical and 2024 data via joins
-- **Gold‑layer analyses** with visualizations (medal tables, bar charts)
-- Fully reproducible pipeline
+<h1 align="center">📝 Descrição do Projeto</h1>
 
----
+Este projeto implementa um **Data Lake local** para dados de medalhas olímpicas, integrando registros históricos (1896–2022) com os Jogos de Paris 2024. A arquitetura segue as camadas **raw → bronze → gold**, garantindo rastreabilidade, qualidade e reusabilidade dos dados. Cada dataset é acompanhado por um arquivo **JSON de metadados**, e todas as transformações são documentadas em **notebooks Jupyter**. O resultado final inclui tabelas de medalhas consolidadas (verão, inverno, total) e gráficos de barras.
 
-## 2️⃣ Data Sources
+<h1 align="center">🤖 Tecnologias Utilizadas</h1>
 
-| Dataset | Period | Source |
-|---------|--------|--------|
-| **Historical Olympics** | 1896 – 2022 | [Base dos Dados](https://basedosdados.org/dataset/62f8cb83-ac37-48be-874b-b94dd92d3e2b) |
-| **Paris 2024** | 2024 | [Kaggle – Paris 2024 Olympic Summer Games](https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games/data) |
-
-Both datasets are placed in the `raw/` directory, each with a companion JSON metadata file.
+<p align="center">
+  <a href="https://www.python.org"><img alt="Static Badge" src="https://img.shields.io/badge/python-white?style=for-the-badge&logo=python"></a>
+  <a href="https://jupyter.org/"><img alt="Static Badge" src="https://img.shields.io/badge/jupyter-white?style=for-the-badge&logo=jupyter"></a>
+  <a href="https://pandas.pydata.org/"><img alt="Static Badge" src="https://img.shields.io/badge/pandas-white?style=for-the-badge&logo=pandas"></a>
+  <a href="https://arrow.apache.org/"><img alt="Static Badge" src="https://img.shields.io/badge/apache%20parquet-white?style=for-the-badge&logo=apacheparquet"></a>
+  <a href="https://matplotlib.org/"><img alt="Static Badge" src="https://img.shields.io/badge/matplotlib-white?style=for-the-badge&logo=plotly"></a>
+</p>
 
 ---
 
-## 3️⃣ Data Lake Structure
+## 1️⃣ Visão Geral da Arquitetura
 
-![Folder Structure](https://via.placeholder.com/800x400/2c3e50/ffffff?text=Directory+Tree+Preview)
+O Data Lake é organizado em três camadas:
 
-```
+| Camada | Descrição |
+|--------|-----------|
+| **raw** | Dados originais (CSV) e seus metadados JSON. |
+| **bronze** | Dados convertidos para Parquet, integrados e com metadados. |
+| **gold** | Análises finais (tabelas, gráficos) prontas para consumo. |
+
+```bash
 olympic-medals-datalake/
 ├── README.md
+├── requirements.txt
 ├── metadata_schema.json
+├── LICENSE
 ├── raw/
 │   ├── olympics_historico.csv
-│   ├── olympics_paris2024.csv
-│   ├── olympics_historico.json
-│   └── olympics_paris2024.json
-├── bronze/
-│   ├── medalhas_1986_2024.parquet
-│   ├── medalhas_1986_2024.csv
-│   ├── medalhas_1986_2024.json
-│   ├── modalidades_1986_2024.csv
-│   ├── modalidades_1986_2024.json
-│   ├── atletas_por_sexo.csv
-│   └── atletas_por_sexo.json
+│   └── olympics_paris2024.csv
+├── bronze/                 # Gerado após execução
 ├── gold/
-│   ├── analise_medalhas/
-│   │   ├── medalhas_verao.csv
-│   │   ├── medalhas_inverno.csv
-│   │   ├── medalhas_total.csv
-│   │   ├── medalhas_plot.png
-│   │   ├── notebook.ipynb
-│   │   └── metadata.json
-│   ├── analise_modalidades/
-│   │   └── ... (similar structure)
-│   └── analise_genero/
-│       └── ...
+│   └── analise_medalhas/   # Gerado após execução
+│   └── relatorio/          # Gerado após execução
 └── notebooks/
+    ├── 00_gerar_metadados.ipynb
     ├── 01_conversao_parquet.ipynb
     ├── 02_integracao_bronze.ipynb
     └── 03_quadro_medalhas_gold.ipynb
 ```
 
-**Layers explained:**
-- **`raw/`** – original CSV files untouched, with JSON metadata.
-- **`bronze/`** – data converted to Parquet, plus integrated datasets (union, joins) and their metadata.
-- **`gold/`** – final analysis outputs (rankings, plots, summaries) organized by analysis topic.
-- **`notebooks/`** – step‑by‑step Jupyter notebooks that build the entire pipeline.
+---
+
+## 2️⃣ Fontes de Dados
+
+| Dataset | Período | Fonte |
+|---------|--------|-------|
+| **Histórico** | 1896 – 2022 | [Base dos Dados – Game Medal Tally](https://basedosdados.org/dataset/62f8cb83-ac37-48be-874b-b94dd92d3e2b?table=medalhas) |
+| **Paris 2024** | 2024 | [Kaggle – Paris 2024 – medallists.csv](https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games) |
+
+**Arquivos esperados na pasta `raw/`**:
+- `olympics_historico.csv` – colunas: `year, edition, country, gold, silver, bronze, total`
+- `olympics_paris2024.csv` – colunas: `medal_type, name, gender, country, discipline, ...`
 
 ---
 
-## 4️⃣ How to Run
+## 3️⃣ Como Executar o Projeto
 
-### Prerequisites
-- Python 3.9+
-- `pip install pandas pyarrow jupyter matplotlib`
+### 3.1 Pré‑requisitos
+- Python 3.9 ou superior
+- Git
 
-### Steps
-1. **Clone the repository**
+### 3.2 Passo a passo
+
+1. **Clone o repositório**
    ```bash
-   git clone https://github.com/yourusername/olympic-medals-datalake.git
+   git clone https://github.com/JulianaBallin/olympic-medals-datalake.git
    cd olympic-medals-datalake
    ```
 
-2. **Place the datasets**  
-   Download the two CSV files and save them into `raw/`.  
-   Ensure filenames match those expected in the notebooks (`olympics_historico.csv`, `olympics_paris2024.csv`).
+2. **Crie e ative um ambiente virtual**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate      # Linux/Mac
+   venv\Scripts\activate         # Windows
+   ```
 
-3. **Run the notebooks in order**  
-   Launch Jupyter:
+3. **Instale as dependências**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Coloque os datasets na pasta `raw/`**  
+   - Baixe `olympics_historico.csv` da Base dos Dados (tabela `world_olympedia_olympic_game_medal_tally.csv`).  
+   - Baixe `medallists.csv` do Kaggle e renomeie para `olympics_paris2024.csv`.  
+   - Certifique-se de que os arquivos estão exatamente com esses nomes.
+
+5. **Execute os notebooks na ordem**  
+   Inicie o Jupyter:
    ```bash
    jupyter notebook notebooks/
    ```
-   Execute sequentially:
-   - `01_conversao_parquet.ipynb` – converts CSVs to Parquet and copies metadata to `bronze/`.
-   - `02_integracao_bronze.ipynb` – performs joins and creates the three bronze‑layer datasets.
-   - `03_quadro_medalhas_gold.ipynb` – generates medal rankings, plots, and saves them in `gold/analise_medalhas/`.
+   Execute as células dos notebooks:
+   - `00_gerar_metadados.ipynb` – cria os arquivos JSON de metadados na pasta `raw/`.
+   - `01_conversao_parquet.ipynb` – converte CSVs para Parquet e copia metadados para `bronze/`.
+   - `02_integracao_bronze.ipynb` – integra os dados e gera os datasets da camada bronze.
+   - `03_quadro_medalhas_gold.ipynb` – gera o quadro de medalhas e gráficos na pasta `gold/analise_medalhas/`.
 
-4. **Explore the results**  
-   Check the `gold/` folder for CSV tables and PNG charts.
+6. **Verifique os resultados**  
+   - Tabelas finais: `gold/analise_medalhas/medalhas_verao.csv`, `medalhas_inverno.csv`, `medalhas_total.csv`
+   - Gráfico: `gold/analise_medalhas/medalhas_plot.png`
 
 ---
 
-## 5️⃣ Results
+## 4️⃣ Resultados
 
-### Medal Tables (Top 10 example)
-| Country | Gold | Silver | Bronze | Total |
-|---------|------|--------|--------|-------|
+### Quadro de Medalhas (Top 10 – Exemplo)
+
+| País | Ouro | Prata | Bronze | Total |
+|------|------|-------|--------|-------|
 | United States | 1061 | 830 | 738 | 2629 |
 | Soviet Union | 395 | 319 | 296 | 1010 |
 | Germany | 305 | 305 | 312 | 922 |
 | ... | ... | ... | ... | ... |
 
-![Medal Plot](https://via.placeholder.com/800x400/4CAF50/ffffff?text=Medal+Ranking+Bar+Chart)
+### Gráfico dos 50 Países Mais Medalhados
+Após a execução do pipeline, o gráfico abaixo é gerado automaticamente:
 
-### Modality Participation
-![Modality Analysis](https://via.placeholder.com/800x400/2196F3/ffffff?text=Top+Disciplines+by+Medal+Count)
+![Medal Plot](gold/analise_medalhas/medalhas_plot.png)
 
-### Gender Distribution
-![Gender Analysis](https://via.placeholder.com/800x400/FF9800/ffffff?text=Athletes+by+Gender+Over+Time)
+> **Nota:** O gráfico só estará disponível após a execução do notebook `03_quadro_medalhas_gold.ipynb`.
 
 ---
 
-## 6️⃣ Metadata Schema
+## 5️⃣ Metadados
 
-Every dataset in the lake includes a JSON file describing its content. The common schema is defined in `metadata_schema.json` and follows this structure:
+Cada dataset possui um arquivo JSON com a seguinte estrutura (definida em `metadata_schema.json`):
 
 ```json
 {
-  "nome_dataset": "string",
-  "fonte": "string",
-  "descricao": "string",
-  "campos_principais": ["field1", "field2"],
-  "data_criacao": "YYYY-MM-DD",
-  "observacoes": "string"
+  "nome_dataset": "Histórico de Medalhas Olímpicas",
+  "fonte": "Base dos Dados",
+  "descricao": "Quadro de medalhas por país e edição...",
+  "campos_principais": ["year", "edition", "country", "gold", "silver", "bronze", "total"],
+  "data_criacao": "2026-03-25",
+  "observacoes": "Inclui edições de verão e inverno."
 }
 ```
 
-This ensures machine‑readable documentation and easy discovery.
-
 ---
 
-## 7️⃣ Author
+## 6️⃣ Autora
 
 **Juliana Ballin**  
-[GitHub Profile](https://github.com/julianaballin) (placeholder)  
-Project developed as part of a Data Engineering activity.
+[GitHub](https://github.com/julianaballin) – Projeto desenvolvido para a disciplina de Ciencias de Dados.
 
 ---
 
-## 8️⃣ License
+## 7️⃣ Licença
 
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+Este projeto está sob a licença MIT – consulte o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
 
-**Happy exploring!** 🏅
+**🏅 Boas análises!**

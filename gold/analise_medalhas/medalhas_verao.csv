@@ -1,0 +1,164 @@
+country,gold,silver,bronze,total,country_pt
+United States,1204,942,839,2985,United States
+Great Britain,331,365,393,1089,Great Britain
+Soviet Union,395,319,296,1010,Soviet Union
+France,284,352,324,960,France
+Germany,262,314,328,904,Germany
+Italy,253,222,242,717,Italy
+Australia,195,215,254,664,Australia
+People's Republic of China,263,199,174,636,People's Republic of China
+Japan,196,181,204,581,Japan
+Hungary,191,168,187,546,Hungary
+Sweden,151,184,185,520,Sweden
+Netherlands,165,131,151,447,Netherlands
+Russian Federation,148,130,153,431,Russian Federation
+East Germany,153,129,127,409,East Germany
+Canada,84,140,158,382,Canada
+Poland,76,107,151,334,Poland
+Romania,102,104,123,329,Romania
+Finland,104,86,120,310,Finland
+Republic of Korea,96,91,100,287,Republic of Korea
+Denmark,65,87,103,255,Denmark
+Spain,88,79,85,252,Spain
+Cuba,86,70,88,244,Cuba
+Bulgaria,57,89,85,231,Bulgaria
+Switzerland,57,86,79,222,Switzerland
+Brazil,41,70,106,217,Brazil
+West Germany,56,67,81,204,West Germany
+New Zealand,79,51,58,188,New Zealand
+Norway,77,54,54,185,Norway
+Belgium,49,57,70,176,Belgium
+China,71,57,40,168,China
+Ukraine,41,42,72,155,Ukraine
+Czechoslovakia,49,50,47,146,Czechoslovakia
+Greece,37,46,49,132,Greece
+Kenya,39,44,41,124,Kenya
+Türkiye,41,30,43,114,Türkiye
+South Africa,28,41,44,113,South Africa
+Unified Team,45,38,29,112,Unified Team
+Austria,25,37,46,108,Austria
+Argentina,22,28,46,96,Argentina
+Jamaica,27,39,28,94,Jamaica
+Belarus,13,30,42,85,Belarus
+Yugoslavia,26,29,28,83,Yugoslavia
+Mexico,13,28,39,80,Mexico
+Kazakhstan,15,24,40,79,Kazakhstan
+Islamic Republic of Iran,24,23,29,76,Islamic Republic of Iran
+Czechia,23,22,31,76,Czechia
+ROC,20,28,23,71,ROC
+Ethiopia,24,15,23,62,Ethiopia
+Croatia,17,27,17,61,Croatia
+Korea,21,14,23,58,Korea
+India,10,10,37,57,India
+Azerbaijan,9,16,31,56,Azerbaijan
+Democratic People's Republic of Korea,16,16,23,55,Democratic People's Republic of Korea
+Serbia,22,8,23,53,Serbia
+Uzbekistan,18,8,23,49,Uzbekistan
+Georgia,13,15,19,47,Georgia
+Ireland,16,11,20,47,Ireland
+Chinese Taipei,10,11,23,44,Chinese Taipei
+Morocco,8,5,31,44,Morocco
+Thailand,11,11,19,41,Thailand
+Indonesia,10,14,16,40,Indonesia
+Egypt,9,11,19,39,Egypt
+Colombia,5,16,17,38,Colombia
+Estonia,10,9,17,36,Estonia
+Portugal,7,11,15,33,Portugal
+Lithuania,6,9,18,33,Lithuania
+Slovakia,10,14,9,33,Slovakia
+Slovenia,10,10,11,31,Slovenia
+Mongolia,2,12,17,31,Mongolia
+Nigeria,3,11,13,27,Nigeria
+Israel,4,10,10,24,Israel
+Armenia,2,11,9,22,Armenia
+Latvia,4,11,6,21,Latvia
+Algeria,7,4,9,20,Algeria
+Trinidad and Tobago,3,5,11,19,Trinidad and Tobago
+Venezuela,3,7,9,19,Venezuela
+Tunisia,6,4,8,18,Tunisia
+Philippines,3,5,10,18,Philippines
+Fiji,2,14,1,17,Fiji
+Malaysia,0,8,8,16,Malaysia
+The Bahamas,8,2,6,16,The Bahamas
+Chile,3,8,4,15,Chile
+Dominican Republic,4,5,6,15,Dominican Republic
+Kyrgyzstan,0,5,8,13,Kyrgyzstan
+"Hong Kong, China",4,3,6,13,"Hong Kong, China"
+Uganda,5,5,3,13,Uganda
+Puerto Rico,2,2,8,12,Puerto Rico
+IR Iran,3,6,3,12,IR Iran
+Australasia,3,4,5,12,Australasia
+Ecuador,4,5,2,11,Ecuador
+Pakistan,4,3,4,11,Pakistan
+Uruguay,2,2,6,10,Uruguay
+Republic of Moldova,0,3,7,10,Republic of Moldova
+Mixed team,3,2,4,9,Mixed team
+Qatar,2,2,5,9,Qatar
+Botswana,1,7,1,9,Botswana
+Serbia and Montenegro,2,4,3,9,Serbia and Montenegro
+Zimbabwe,3,4,1,8,Zimbabwe
+Bahrain,4,3,1,8,Bahrain
+DPR Korea,0,4,4,8,DPR Korea
+Tajikistan,1,1,5,7,Tajikistan
+AIN,1,4,1,6,AIN
+Cameroon,3,1,2,6,Cameroon
+Singapore,1,2,3,6,Singapore
+Luxembourg,3,2,0,5,Luxembourg
+Vietnam,1,3,1,5,Vietnam
+Peru,1,3,1,5,Peru
+Independent Olympic Athletes,1,1,3,5,Independent Olympic Athletes
+Grenada,1,1,3,5,Grenada
+Côte d'Ivoire,1,1,3,5,Côte d'Ivoire
+Namibia,0,5,0,5,Namibia
+Ghana,0,1,4,5,Ghana
+Kosovo,3,1,1,5,Kosovo
+Costa Rica,1,1,2,4,Costa Rica
+Bohemia,0,1,3,4,Bohemia
+Kingdom of Saudi Arabia,0,2,2,4,Kingdom of Saudi Arabia
+Jordan,1,2,1,4,Jordan
+Iceland,0,2,2,4,Iceland
+Syrian Arab Republic,1,1,2,4,Syrian Arab Republic
+Panama,1,1,2,4,Panama
+Lebanon,0,2,2,4,Lebanon
+Kuwait,0,0,3,3,Kuwait
+Guatemala,1,1,1,3,Guatemala
+San Marino,0,1,2,3,San Marino
+Zambia,0,1,2,3,Zambia
+United Arab Emirates,1,0,1,2,United Arab Emirates
+Cyprus,0,2,0,2,Cyprus
+Bermuda,1,0,1,2,Bermuda
+Burundi,1,1,0,2,Burundi
+Afghanistan,0,0,2,2,Afghanistan
+Albania,0,0,2,2,Albania
+Mozambique,1,0,1,2,Mozambique
+Sri Lanka,0,2,0,2,Sri Lanka
+Suriname,1,0,1,2,Suriname
+Saint Lucia,1,1,0,2,Saint Lucia
+North Macedonia,0,1,1,2,North Macedonia
+United Republic of Tanzania,0,2,0,2,United Republic of Tanzania
+West Indies Federation,0,0,2,2,West Indies Federation
+United Arab Republic,0,1,1,2,United Arab Republic
+Niger,0,1,1,2,Niger
+Haiti,0,1,1,2,Haiti
+Barbados,0,0,1,1,Barbados
+Burkina Faso,0,0,1,1,Burkina Faso
+Cabo Verde,0,0,1,1,Cabo Verde
+Eritrea,0,0,1,1,Eritrea
+Dominica,1,0,0,1,Dominica
+EOR,0,0,1,1,EOR
+Netherlands Antilles,0,1,0,1,Netherlands Antilles
+Montenegro,0,1,0,1,Montenegro
+Monaco,0,0,1,1,Monaco
+Mauritius,0,0,1,1,Mauritius
+Iraq,0,0,1,1,Iraq
+Djibouti,0,0,1,1,Djibouti
+Gabon,0,1,0,1,Gabon
+Guyana,0,0,1,1,Guyana
+Samoa,0,1,0,1,Samoa
+Senegal,0,1,0,1,Senegal
+Paraguay,0,1,0,1,Paraguay
+Sudan,0,1,0,1,Sudan
+Turkmenistan,0,1,0,1,Turkmenistan
+Tonga,0,1,0,1,Tonga
+Togo,0,0,1,1,Togo
+United States Virgin Islands,0,1,0,1,United States Virgin Islands
