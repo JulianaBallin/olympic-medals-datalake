@@ -44,16 +44,41 @@ olympic-medals-datalake/
 ├── LICENSE
 ├── raw/
 │   ├── olympics_historico.csv
-│   └── olympics_paris2024.csv
-├── bronze/                 # Gerado após execução
-├── gold/
-│   └── analise_medalhas/   # Gerado após execução
-│   └── relatorio/          # Gerado após execução
+│   ├── olympics_paris2024.csv
+│   ├── olympics_historico.json          # gerado automaticamente
+│   └── olympics_paris2024.json          # gerado automaticamente
+├── bronze/                               # (gerado após execução)
+│   ├── olympics_historico.parquet
+│   ├── olympics_paris2024.parquet
+│   ├── olympics_historico.json
+│   ├── olympics_paris2024.json
+│   ├── medalhas_unificado.parquet
+│   ├── medalhas_unificado.json
+│   ├── modalidades_paris2024.parquet
+│   ├── modalidades_paris2024.json
+│   ├── atletas_por_sexo_paris2024.parquet
+│   └── atletas_por_sexo_paris2024.json
+├── gold/                                 # (gerado após execução)
+│   ├── analise_medalhas/
+│   │   ├── medalhas_verao.csv
+│   │   ├── medalhas_inverno.csv
+│   │   ├── medalhas_total.csv
+│   │   ├── medalhas_plot.png
+│   │   ├── evolucao_medalhas.png
+│   │   ├── distribuicao_medalhas.png
+│   │   ├── medalhas_por_genero.png
+│   │   └── metadata.json
+│   └── relatorio/
+│       ├── medalhas_top30.png
+│       ├── evolucao.png
+│       ├── genero_paris.png
+│       └── relatorio_medalhas.pdf
 └── notebooks/
     ├── 00_gerar_metadados.ipynb
     ├── 01_conversao_parquet.ipynb
     ├── 02_integracao_bronze.ipynb
-    └── 03_quadro_medalhas_gold.ipynb
+    ├── 03_quadro_medalhas_gold.ipynb
+    └── 04_gerar_relatorio_pdf.ipynb
 ```
 
 ---
